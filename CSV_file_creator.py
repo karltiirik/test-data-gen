@@ -39,4 +39,4 @@ def read_names(file_name):
 if __name__ == "__main__":
     import cProfile
 
-    cProfile.run('generate_csv_with_n_users(1000000)', sort='tottime')  # ~27 seconds, 268 MB of RAM
+    cProfile.run('generate_csv_with_n_users(1000000)', sort='tottime')  # ~27 seconds, 5.5 MB of RAM
