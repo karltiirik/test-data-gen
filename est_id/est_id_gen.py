@@ -42,7 +42,7 @@ def get_century_digit(date, gender):
 
 def format_date(date):
     """ Format date """
-    f_date = str(date.day) + str(date.month) + str(date.year)[2:]
+    f_date = str(date.year)[2:] + str(date.month).zfill(2) + str(date.day).zfill(2)
     return f_date
 
 
@@ -91,4 +91,4 @@ def id_generator(n):
 if __name__ == "__main__":
     import cProfile
 
-    cProfile.run('gen_n_persons(1000000)', sort='tottime')
+    cProfile.run('id_generator(1000000)', sort='tottime')
