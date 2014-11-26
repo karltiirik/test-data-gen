@@ -2,15 +2,16 @@ __author__ = 'Karl Tiirik'
 
 import csv
 import random
+import os
 
 from est_id import est_id_gen
 
 
 def generate_csv_with_n_users(n):
     """ Generates a CSV file with n test persons' data """
-    surnames, forenames = read_names('IO files\\names.txt')
+    surnames, forenames = read_names(os.path.join('IO files', 'names.txt'))
 
-    with open('IO files\\test_persons_data.csv', 'w', encoding="utf8") as test_persons:
+    with open(os.path.join('IO files', 'test_persons_data.csv'), 'w', encoding="utf8") as test_persons:
         wr = csv.writer(test_persons, delimiter=',', lineterminator='\n')
         wr.writerow(['SOCIAL_SECURITY_NUMBER', 'FORENAME', 'SURNAME', 'GENDER', 'DATE_OF_BIRTH'])
 
